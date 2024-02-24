@@ -2,28 +2,6 @@ function rap = reproa_CONN(rap,command,subj)
 resp='';
 
 switch command
-%     case 'report'
-%         localpath = aas_getpath_bydomain(rap,rap.tasklist.currenttask.domain,[subj,sess]);
-%
-%         fdiag = dir(fullfile(localpath,'diagnostic_*.jpg'));
-%         if isempty(fdiag)
-%             streams=aas_getstreams(rap,'output');
-%             for streamind=1:length(streams)
-%                 % obtain output
-%                 outputfnames = aas_getfiles_bystream(rap,rap.tasklist.currenttask.domain,[subj sess],streams{streamind},'output');
-%
-%                 % perform diagnostics
-%                 do_diag(outputfnames);
-%             end
-%             fdiag = dir(fullfile(localpath,'diagnostic_*.jpg'));
-%         end
-%
-%         for d = 1:numel(fdiag)
-%             rap = aas_report_add(rap,subj,'<table><tr><td>');
-%             imgpath = fullfile(localpath,fdiag(d).name);
-%             rap=aas_report_addimage(rap,subj,imgpath);
-%             rap = aas_report_add(rap,subj,'</td></tr></table>');
-%         end
     case 'doit'
         global reproacache
         CONN = reproacache('toolbox.conn');

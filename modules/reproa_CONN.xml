@@ -37,6 +37,7 @@
     <outputstreams>
         <stream domain='subject'>settings</stream>
         <stream domain='subject'>connectivity</stream>
+        <stream domain='fmrirun'>connectivity</stream>
     </outputstreams>
 
 </rap>
