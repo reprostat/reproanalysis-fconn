@@ -2,4 +2,5 @@
 <rap>
     <module><name>reproa_denormtofmri_rois</name></module>
     <module><name>reproa_CONN</name></module>
+    <module><name>reproa_validateCONN</name></module>
 </rap>
