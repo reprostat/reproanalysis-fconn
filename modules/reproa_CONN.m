@@ -135,8 +135,15 @@ switch command
 
         CONN_x.Preproc.filter = getSetting(rap,'denoising.filter');
         if isnan(CONN_x.Preproc.filter(1))
+            inStream = getStreamByName(rap,'firstlevel_spm');
+            if isempty(inStream.path) % local
+                inrap = rap;
+            else % remote
+                dat = load(fullfile(inStream.path,'rap.mat'));
+                inrap = setCurrenttask(dat.rap,'task',inStream.taskindex);
+            end
             CONN_x.Preproc.filter(1) = ...
-                1/getSetting(setCurrenttask(rap,'task',getSourceTaskInd(rap,'reproa_firstlevelmodel')),'highpassfilter');
+                1/getSetting(setCurrenttask(inrap,'task',getSourceTaskInd(inrap,'reproa_firstlevelmodel')),'highpassfilter');
         end
         CONN_x.Preproc.regbp = 2; % 1 = filter, then regress, 2 = Simultaneous regression and filtering
         CONN_x.Preproc.detrending = 1;
