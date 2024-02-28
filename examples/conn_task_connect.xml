@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rap>
+    <module><name>reproa_mask_segmentations</name></module>
+    <module><name>reproa_denormtofmri_rois</name></module>
+    <module><name>reproa_CONN</name></module>
+    <module><name>reproa_validateCONN</name></module>
+</rap>
